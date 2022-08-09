@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 640947245205893724}
   - component: {fileID: 640947245205893726}
   - component: {fileID: 640947245205893713}
+  - component: {fileID: 941503259119065004}
   m_Layer: 0
   m_Name: Printer1
   m_TagString: Untagged
@@ -101,6 +102,21 @@ MonoBehaviour:
   _poolTemplateTile: {fileID: 0}
   _pointSpawn: {fileID: 640947244723783216}
   _animator: {fileID: 640947246028802131}
+--- !u!114 &941503259119065004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298490804566791298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f31657d693805543a6774b7ff863e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentTileOnBoard: {fileID: 0}
+  _sliderPrinter: {fileID: 640947245614856043}
+  _textPrinter: {fileID: 640947246421270676}
 --- !u!1 &640947244723783217
 GameObject:
   m_ObjectHideFlags: 0

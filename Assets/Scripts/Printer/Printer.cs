@@ -18,11 +18,6 @@ public class Printer : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<Bag>(out Bag bag))
         {
-            /*if (bag.IsFull != true && isWork == false)
-            {
-                isWork = true;
-                StartCoroutine(CreateTile(bag));
-            }*/
             if (isWork == false)
             {
                 if (bag.IsFull == false)

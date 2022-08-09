@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Bag : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Bag : MonoBehaviour
     private bool _isFull = false;
     private bool _isEmpty = true;
 
+    public event UnityAction<Material> ChangedMaterial;
+
     public bool IsFull => _isFull;
     public bool IsEmpty => _isEmpty;
     public Material Material => _material;
@@ -25,6 +28,7 @@ public class Bag : MonoBehaviour
         if (_material == null)
         {
             _material = material;
+            ChangedMaterial.Invoke(_material);
         }
 
         _isEmpty = false;
@@ -51,21 +55,25 @@ public class Bag : MonoBehaviour
     {
         if (_countTile > 0)
         {
+            _isFull = false;
             gameObject.transform.GetChild(_countTile - 1).TryGetComponent<Tile>(out Tile tile);
             if (tile != null)
             {
                 tile.SetMoveToBoard(nextParentObject, pointCollect);
                 _countTile--;
+
+                if (_countTile == 0)
+                {
+                    _material = null;
+                    _isEmpty = true;
+                    _isFull = false;
+                    ChangedMaterial.Invoke(_material);
+                }
             }
             else
             {
                 Debug.LogError("Bag: " + "Кол-во: " + _countTile + " !!! Счетчик: " + gameObject.transform.childCount);
             }
-        }
-        else
-        {
-            _isEmpty = true;
-            _isFull = false;
         }
     }
 
