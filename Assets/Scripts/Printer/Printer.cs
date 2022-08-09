@@ -8,15 +8,29 @@ public class Printer : MonoBehaviour
     [SerializeField] private Transform _poolTemplateTile;
     [SerializeField] private Transform _pointSpawn;
     [SerializeField] private Animator _animator;
+    [SerializeField] private CollectorTile _collector;
     private float delayBetweenCreate = 0.1f;
     private bool isWork = false;
+    private bool isActive = true;
 
     private const string Work = "WorkAnim";
     private const string Idle = "Idle";
 
+    public Material MaterialTile => _materialTile;
+
+    private void OnEnable()
+    {
+        _collector.Completed += ChangeActive;
+    }
+
+    private void OnDisable()
+    {
+        
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.TryGetComponent<Bag>(out Bag bag))
+        if (isActive == true && collision.gameObject.TryGetComponent<Bag>(out Bag bag))
         {
             if (isWork == false)
             {
@@ -49,6 +63,11 @@ public class Printer : MonoBehaviour
             StopCoroutine(CreateTile(bag));
             isWork = false;
         }
+    }
+
+    private void ChangeActive()
+    {
+        isActive = false;
     }
 
     private IEnumerator CreateTile(Bag bag)

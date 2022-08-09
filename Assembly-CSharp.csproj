@@ -73,6 +73,7 @@
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\BillBoard.cs" />
     <Compile Include="Assets\Scripts\CollectorTile.cs" />
+    <Compile Include="Assets\Scripts\PrinterState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

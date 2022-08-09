@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CollectorTile : MonoBehaviour
@@ -11,6 +12,8 @@ public class CollectorTile : MonoBehaviour
 
     private int _maximumNumber = 0;
     private int _count = 0;
+
+    public event UnityAction Completed;
 
     private void Awake()
     {
@@ -42,6 +45,11 @@ public class CollectorTile : MonoBehaviour
         _count++;
         SetSlider();
         SetText();
+
+        if (_count== _maximumNumber)
+        {
+            Completed?.Invoke();
+        }
     }
 
     private void SetSlider()
