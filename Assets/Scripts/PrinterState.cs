@@ -15,6 +15,7 @@ public class PrinterState : MonoBehaviour
     private Material _material;
     private bool _isActive = true;
 
+    public Material Material  => _material;
 
     private void Awake()
     {

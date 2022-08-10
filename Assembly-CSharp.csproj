@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
+    <Compile Include="Assets\Scripts\CollectorTile.cs" />
     <Compile Include="Assets\Scripts\Printer\Printer.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Scripts\MoverTileOnPlane.cs" />
@@ -72,8 +73,9 @@
     <Compile Include="Assets\ModularFirstPersonController\FirstPersonController\FirstPersonController.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\BillBoard.cs" />
-    <Compile Include="Assets\Scripts\CollectorTile.cs" />
     <Compile Include="Assets\Scripts\PrinterState.cs" />
+    <Compile Include="Assets\Scripts\Helper\HelperMain.cs" />
+    <Compile Include="Assets\Scripts\Helper\HelperDirection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
