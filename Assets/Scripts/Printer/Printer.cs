@@ -25,7 +25,7 @@ public class Printer : MonoBehaviour
 
     private void OnDisable()
     {
-        
+        _collector.Completed -= ChangeActive;
     }
 
     private void OnTriggerEnter(Collider collision)

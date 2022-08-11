@@ -10,6 +10,7 @@ public class CollectorTile : MonoBehaviour
     [SerializeField] private Slider _sliderPrinter;
     [SerializeField] private TextMesh _textPrinter;
 
+    private List<TileOnPlane> _tileOnPlanes = new List<TileOnPlane>();
     private int _maximumNumber = 0;
     private int _count = 0;
 
@@ -28,25 +29,45 @@ public class CollectorTile : MonoBehaviour
         {
             TileOnPlane tile = _parentTileOnBoard.GetChild(i).GetComponentInChildren<TileOnPlane>();
             tile.Activated += IncreaseNumberActivated;
+            tile.Activated += RemoveTileFromList;
+            _tileOnPlanes.Add(tile);
         }
     }
 
     private void OnDisable()
     {
-        for (int i = 0; i < _parentTileOnBoard.childCount; i++)
+        for (int i = 0; i < _tileOnPlanes.Count; i++)
         {
-            TileOnPlane tile = _parentTileOnBoard.GetChild(i).GetComponentInChildren<TileOnPlane>();
-            tile.Activated -= IncreaseNumberActivated;
+            _tileOnPlanes[i].Activated -= IncreaseNumberActivated;
+            _tileOnPlanes[i].Activated -= RemoveTileFromList;
         }
     }
 
-    private void IncreaseNumberActivated()
+    public TileOnPlane GetTileOnPlane()
+    {
+        if (_tileOnPlanes.Count > 0)
+        {
+            TileOnPlane tileOnPlane = _tileOnPlanes[Random.Range(0, _tileOnPlanes.Count)];
+            return tileOnPlane;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    private void RemoveTileFromList(TileOnPlane tile)
+    {
+        _tileOnPlanes.Remove(tile);
+    }
+
+    private void IncreaseNumberActivated(TileOnPlane tile)
     {
         _count++;
         SetSlider();
         SetText();
 
-        if (_count== _maximumNumber)
+        if (_count == _maximumNumber)
         {
             Completed?.Invoke();
         }

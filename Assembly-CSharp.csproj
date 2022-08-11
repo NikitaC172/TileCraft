@@ -61,11 +61,13 @@
     <Compile Include="Assets\Scripts\Printer\Printer.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Scripts\MoverTileOnPlane.cs" />
+    <Compile Include="Assets\Scripts\Helper\HelperMain.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\TrashBox\TrashBox.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
+    <Compile Include="Assets\Scripts\Helper\HelperDirection.cs" />
     <Compile Include="Assets\Scripts\TilePlane\TileOnPlane.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraPlayer.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
@@ -74,8 +76,6 @@
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\BillBoard.cs" />
     <Compile Include="Assets\Scripts\PrinterState.cs" />
-    <Compile Include="Assets\Scripts\Helper\HelperMain.cs" />
-    <Compile Include="Assets\Scripts\Helper\HelperDirection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

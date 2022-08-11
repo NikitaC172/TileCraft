@@ -34,6 +34,11 @@ public class PrinterState : MonoBehaviour
         _collector.Completed -= SetCoverComplite;
     }
 
+    public CollectorTile GetCollectorTile()
+    {
+        return _collector;
+    }
+
     private void ChangeState(Material material)
     {
         if (_isActive == true)

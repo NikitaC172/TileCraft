@@ -20,7 +20,7 @@ public class TileOnPlane : MonoBehaviour
 
     private const string AnimateFill = "SetOnField";
 
-    public event UnityAction Activated;
+    public event UnityAction<TileOnPlane> Activated;
 
     public Material Material => _material;
     public Transform PointCollect => _pointCollect;
@@ -43,7 +43,7 @@ public class TileOnPlane : MonoBehaviour
 
     public void FillTile()
     {
-        Activated?.Invoke();
+        Activated?.Invoke(this);
         _collider.enabled = false;
         _tileRoot.SetActive(true);
         _animatorTile.Play(AnimateFill);

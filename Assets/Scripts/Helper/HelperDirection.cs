@@ -8,38 +8,61 @@ public class HelperDirection : MonoBehaviour
     [SerializeField] private GameObject _RemoveSpriteObject;
     [SerializeField] private HelperMain _helperMain;
 
-    //private Transform _transformTarget;
     private TileOnPlane _tileTarget = null;
-
-    private void OnEnable()
-    {
-        SetDirection(_tileTarget);
-    }
+    private GameObject _target = null;
 
     private void FixedUpdate()
     {
-        if (_tileTarget != null)
+        if (_target != null)
         {
-            transform.LookAt(_tileTarget.transform.position, Vector3.up);
+            transform.LookAt(_target.transform.position, Vector3.up);
         }
     }
 
     private void OnDisable()
     {
-        _tileTarget.Activated -= TryGetNewTarget;
+        if (_tileTarget != null)
+        {
+            _tileTarget.Activated -= TryGetNewTargetTile;
+        }
     }
 
-    private void SetDirection(TileOnPlane tileOnPlane)
+    public void SetDirectionToTrashBox(TrashBox trashBox)
     {
-        _tileTarget = _helperMain.GetTarget();
-        _tileTarget.Activated += TryGetNewTarget;
-        //_transformTarget = tileOnPlane.transform;
+        SetTileTrashBox();
+        _target = trashBox.gameObject;
+        Debug.LogWarning(_target);
     }
 
-    private void TryGetNewTarget()
+    public void SetDirectionFromTile()
     {
-        _helperMain.RemoveTileFromList(_tileTarget);
+        TileOnPlane tileOnPlane = _helperMain.GetTileOnPlane();
+
+        if (tileOnPlane != null)
+        {
+            _tileTarget = tileOnPlane;
+            SetTileSprite();
+            _tileTarget.Activated += TryGetNewTargetTile;
+            _target = _tileTarget.gameObject;
+        }
+    }
+
+    private void SetTileTrashBox()
+    {
+        _tileSpriteObject.SetActive(false);
+        _RemoveSpriteObject.SetActive(true);
+    }
+
+    private void SetTileSprite()
+    {
+        _RemoveSpriteObject.SetActive(false);
+        _tileSpriteObject.SetActive(true);
+    }
+
+    private void TryGetNewTargetTile(TileOnPlane tileOnPlane)
+    {
+        _tileTarget.Activated -= TryGetNewTargetTile;
         _tileTarget = null;
-        SetDirection(_tileTarget);
+        SetDirectionFromTile();
     }
 }
