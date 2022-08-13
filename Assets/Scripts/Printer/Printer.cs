@@ -65,7 +65,7 @@ public class Printer : MonoBehaviour
         }
     }
 
-    private void ChangeActive()
+    private void ChangeActive(CollectorTile collectorTile)
     {
         isActive = false;
     }

@@ -30,7 +30,10 @@ public class HelperMain : MonoBehaviour
     private void OnDisable()
     {
         _bag.ChangedMaterial -= ActivatePointers;
-        _collectorTile.Completed -= SetPointerToTrashCart;
+        if (_collectorTile != null)
+        {
+            _collectorTile.Completed -= SetPointerToTrashCart;
+        }
     }
 
     private void Start()
@@ -57,7 +60,7 @@ public class HelperMain : MonoBehaviour
         return tileOnPlane;
     }
 
-    private void SetPointerToTrashCart()
+    private void SetPointerToTrashCart(CollectorTile collectorTile)
     {
         for (int i = 0; i < _pointers.Count; i++)
         {
@@ -76,7 +79,7 @@ public class HelperMain : MonoBehaviour
     private void DeactivatePointers()
     {
         if (_bag.IsEmpty == true)
-        { 
+        {
             foreach (var pointer in _pointers)
             {
                 pointer.gameObject.SetActive(false);

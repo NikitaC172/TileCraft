@@ -36,7 +36,7 @@ MonoBehaviour:
   m_Name: Movie
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 34
+  take: 78
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
@@ -57,17 +57,17 @@ MonoBehaviour:
   encoderColorDefinitionSelected: 0
   encoderCustomOptions: 
   m_ImageInputSelector:
-    m_Selected: cameraInputSettings
+    m_Selected: gameViewInputSettings
     gameViewInputSettings:
       m_OutputResolution:
         m_CustomWidth: 860
         m_CustomHeight: 1024
-        imageHeight: 2147483647
+        imageHeight: 720
         maxSupportedHeight: 2160
         m_AspectRatio:
-          m_CustomAspectX: 1
-          m_CustomAspectY: 1
-          m_ImageAspect: 1
+          m_CustomAspectX: 9
+          m_CustomAspectY: 16
+          m_ImageAspect: 7
       flipFinalOutput: 1
     cameraInputSettings:
       m_OutputResolution:
@@ -81,7 +81,7 @@ MonoBehaviour:
           m_ImageAspect: 7
       source: 2
       cameraTag: 
-      flipFinalOutput: 0
+      flipFinalOutput: 1
       captureUI: 0
     camera360InputSettings:
       source: 2

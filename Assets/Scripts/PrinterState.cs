@@ -58,7 +58,7 @@ public class PrinterState : MonoBehaviour
         }
     }
 
-    private void SetCoverComplite()
+    private void SetCoverComplite(CollectorTile collectorTile)
     {
         _lockImage.SetActive(false);
         _blockCover.SetActive(false);

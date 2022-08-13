@@ -31,7 +31,6 @@ public class HelperDirection : MonoBehaviour
     {
         SetTileTrashBox();
         _target = trashBox.gameObject;
-        Debug.LogWarning(_target);
     }
 
     public void SetDirectionFromTile()

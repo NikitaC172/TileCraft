@@ -14,7 +14,7 @@ public class CollectorTile : MonoBehaviour
     private int _maximumNumber = 0;
     private int _count = 0;
 
-    public event UnityAction Completed;
+    public event UnityAction<CollectorTile> Completed;
 
     private void Awake()
     {
@@ -69,7 +69,7 @@ public class CollectorTile : MonoBehaviour
 
         if (_count == _maximumNumber)
         {
-            Completed?.Invoke();
+            Completed?.Invoke(this);
         }
     }
 
