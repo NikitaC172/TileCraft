@@ -58,31 +58,32 @@
   <ItemGroup>
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Scripts\CollectorTile.cs" />
+    <Compile Include="Assets\GUI Kit Casual Game\Scripts\PanelControl.cs" />
     <Compile Include="Assets\Scripts\Printer\Printer.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Scripts\MoverTileOnPlane.cs" />
     <Compile Include="Assets\Scripts\Helper\HelperMain.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\Scripts\Notification\ComliteNotification.cs" />
     <Compile Include="Assets\Scripts\TrashBox\TrashBox.cs" />
+    <Compile Include="Assets\GUI Kit Casual Game\Scripts\Panel.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
     <Compile Include="Assets\Scripts\Helper\HelperDirection.cs" />
+    <Compile Include="Assets\Scripts\Coin.cs" />
+    <Compile Include="Assets\Scripts\Notification\StackNotification.cs" />
+    <Compile Include="Assets\GUI Kit Casual Game\Extensions\UIParticle\UIParticleSystem.cs" />
     <Compile Include="Assets\Scripts\TilePlane\TileOnPlane.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraPlayer.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\Scripts\CollectorCoin.cs" />
     <Compile Include="Assets\Scripts\Bag\Bag.cs" />
     <Compile Include="Assets\ModularFirstPersonController\FirstPersonController\FirstPersonController.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\BillBoard.cs" />
     <Compile Include="Assets\Scripts\PrinterState.cs" />
-    <Compile Include="Assets\Scripts\Coin.cs" />
-    <Compile Include="Assets\Scripts\CollectorCoin.cs" />
-    <Compile Include="Assets\Scripts\Notification\StackNotification.cs" />
-    <Compile Include="Assets\Scripts\Notification\ComliteNotification.cs" />
-    <Compile Include="Assets\GUI Kit Casual Game\Scripts\Panel.cs" />
-    <Compile Include="Assets\GUI Kit Casual Game\Extensions\UIParticle\UIParticleSystem.cs" />
-    <Compile Include="Assets\GUI Kit Casual Game\Scripts\PanelControl.cs" />
+    <Compile Include="Assets\Scripts\Highlight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -696,6 +697,9 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
@@ -710,9 +714,6 @@
     </Reference>
     <Reference Include="Unity.Recorder">
       <HintPath>Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

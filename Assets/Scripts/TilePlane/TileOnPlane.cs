@@ -13,6 +13,7 @@ public class TileOnPlane : MonoBehaviour
     [SerializeField] private GameObject _greyBackground;
     [SerializeField] private GameObject _parentCoin;
     [SerializeField] private Animator _animatorTile;
+    [SerializeField] private Highlight _highlight;
     [SerializeField] private MeshRenderer _tileRenderer;
     [SerializeField] private Bag _bag;
 
@@ -44,11 +45,11 @@ public class TileOnPlane : MonoBehaviour
 
     public void FillTile()
     {
-        Activated?.Invoke(this);
-        _collider.enabled = false;
-        _tileRoot.SetActive(true);
-        _animatorTile.Play(AnimateFill);
-        _parentCoin.SetActive(true);
+            Activated?.Invoke(this);
+            _collider.enabled = false;
+            _tileRoot.SetActive(true);
+            _animatorTile.Play(AnimateFill);
+            _parentCoin.SetActive(true);
     }
 
     private void ChangeBackground(Material material)
@@ -59,7 +60,7 @@ public class TileOnPlane : MonoBehaviour
             _whiteBackground.SetActive(false);
             _isWhiteBackground = false;
         }
-        else if(_isWhiteBackground == false)
+        else if (_isWhiteBackground == false)
         {
             _whiteBackground.SetActive(true);
             _greyBackground.SetActive(false);

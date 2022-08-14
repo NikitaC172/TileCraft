@@ -9,6 +9,7 @@ public class Printer : MonoBehaviour
     [SerializeField] private Transform _pointSpawn;
     [SerializeField] private Animator _animator;
     [SerializeField] private CollectorTile _collector;
+    [SerializeField] private ParticleSystem _particleSystem;
     private float delayBetweenCreate = 0.1f;
     private bool isWork = false;
     private bool isActive = true;
@@ -74,6 +75,7 @@ public class Printer : MonoBehaviour
     {
         var waitSecond = new WaitForSeconds(delayBetweenCreate);
         _animator.Play(Work);
+        _particleSystem.Play();
 
         while (bag.IsFull != true && isWork == true)
         {
@@ -86,6 +88,7 @@ public class Printer : MonoBehaviour
             yield return waitSecond;
         }
 
+        _particleSystem.Stop();
         _animator.Play(Idle);
         StopCoroutine(CreateTile(bag));
         isWork = false;
