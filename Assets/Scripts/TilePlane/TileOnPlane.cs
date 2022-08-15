@@ -45,11 +45,11 @@ public class TileOnPlane : MonoBehaviour
 
     public void FillTile()
     {
-            Activated?.Invoke(this);
-            _collider.enabled = false;
-            _tileRoot.SetActive(true);
-            _animatorTile.Play(AnimateFill);
-            _parentCoin.SetActive(true);
+        Activated?.Invoke(this);
+        _collider.enabled = false;
+        _tileRoot.SetActive(true);
+        _animatorTile.Play(AnimateFill);
+        _parentCoin.SetActive(true);
     }
 
     private void ChangeBackground(Material material)

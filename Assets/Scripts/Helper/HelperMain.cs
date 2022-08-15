@@ -5,10 +5,6 @@ using UnityEngine;
 public class HelperMain : MonoBehaviour
 {
     [SerializeField] private Bag _bag;
-    //[SerializeField] private HelperDirection _pointerOne;
-    //[SerializeField] private HelperDirection _pointerTwo;
-    //[SerializeField] private HelperDirection _pointerThree;
-    //[SerializeField] private Transform _parentTile;
     [SerializeField] private List<PrinterState> _printers;
     [SerializeField] private List<HelperDirection> _pointers;
     [SerializeField] private List<TrashBox> _TrashBoxes;
@@ -16,37 +12,20 @@ public class HelperMain : MonoBehaviour
     private CollectorTile _collectorTile;
     private Material _material;
 
-    private void Awake()
-    {
-        //_collectorTile = _printer.GetCollectorTile();
-    }
-
     private void OnEnable()
     {
         _bag.ChangedMaterial += ActivatePointers;
-        //_collectorTile.Completed += SetPointerToTrashCart;
     }
 
     private void OnDisable()
     {
         _bag.ChangedMaterial -= ActivatePointers;
+
         if (_collectorTile != null)
         {
             _collectorTile.Completed -= SetPointerToTrashCart;
         }
     }
-
-    private void Start()
-    {
-        //_material = _printer.Material;
-    }
-
-    /*public TileOnPlane GetTarget()
-    {
-        TileOnPlane target;
-        target = _tiles[Random.Range(0, _tiles.Count)];
-        return target;
-    }*/
 
     public TileOnPlane GetTileOnPlane()
     {

@@ -11,12 +11,13 @@ public class Bag : MonoBehaviour
     [SerializeField] JoystickPlayerExample _characterBody;
 
     private int _countTile = 0;
-    private float _stepBetweenCell = 0.15f;
+    private float _stepBetweenCell = 0.1f;
     private bool _isFull = false;
     private bool _isEmpty = true;
 
     public event UnityAction<Material> ChangedMaterial;
 
+    public bool IsMove => _characterBody.IsMove;
     public bool IsFull => _isFull;
     public bool IsEmpty => _isEmpty;
     public Material Material => _material;

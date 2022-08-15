@@ -10,7 +10,7 @@ public class Printer : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private CollectorTile _collector;
     [SerializeField] private ParticleSystem _particleSystem;
-    private float delayBetweenCreate = 0.1f;
+    private float delayBetweenCreate = 0.05f;
     private bool isWork = false;
     private bool isActive = true;
 
@@ -73,18 +73,35 @@ public class Printer : MonoBehaviour
 
     private IEnumerator CreateTile(Bag bag)
     {
+        bool isCurrentWork = false;
         var waitSecond = new WaitForSeconds(delayBetweenCreate);
-        _animator.Play(Work);
-        _particleSystem.Play();
 
         while (bag.IsFull != true && isWork == true)
         {
-            Tile tile = _poolTemplateTile.GetChild(0).GetComponent<Tile>();
-            tile.gameObject.SetActive(true);
-            tile.SetMeshRenderer(_materialTile);
-            tile.gameObject.transform.parent = _pointSpawn;
-            tile.gameObject.transform.localPosition = Vector3.zero;
-            bag.Load(tile, _materialTile);
+            if (bag.IsMove == false && isCurrentWork == false)
+            {
+                isCurrentWork = true;
+                _animator.Play(Work);
+                _particleSystem.Play();
+            }
+
+            if(bag.IsMove == true && isCurrentWork == true)
+            {
+                isCurrentWork = false;
+                _particleSystem.Stop();
+                _animator.Play(Idle);
+            }
+
+            if (isCurrentWork == true)
+            {
+                Tile tile = _poolTemplateTile.GetChild(0).GetComponent<Tile>();
+                tile.gameObject.SetActive(true);
+                tile.SetMeshRenderer(_materialTile);
+                tile.gameObject.transform.parent = _pointSpawn;
+                tile.gameObject.transform.localPosition = Vector3.zero;
+                bag.Load(tile, _materialTile);
+            }
+
             yield return waitSecond;
         }
 
