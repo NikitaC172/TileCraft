@@ -60,6 +60,11 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\FloatingJoystickEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\JoystickEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\DynamicJoystickEditor.cs" />
+    <Compile Include="Assets\FlatKit\Utils\Readme\Editor\ReadmeEditor.cs" />
+    <Compile Include="Assets\FlatKit\Utils\Readme\Editor\FlatKitReadme.cs" />
+    <Compile Include="Assets\FlatKit\Utils\Readme\Editor\NetworkManager.cs" />
+    <Compile Include="Assets\FlatKit\Shaders\Editor\StylizedSurfaceEditor.cs" />
+    <Compile Include="Assets\FlatKit\Shaders\GradientSkybox\Editor\GradientSkyboxEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

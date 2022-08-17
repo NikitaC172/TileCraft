@@ -84,16 +84,24 @@
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\BillBoard.cs" />
     <Compile Include="Assets\Scripts\PrinterState.cs" />
+    <Compile Include="Assets\FlatKit\Scripts\UvScroller.cs" />
+    <Compile Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Scripts\FogImageEffect.cs" />
+    <Compile Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Scripts\OutlineImageEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Resources\OutlinePlus.shader" />
+    <None Include="Assets\FlatKit\Shaders\StylizedSurface\DustyroomTerrainSplatmapCommon.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\GUI Kit Casual Game\Extensions\UIParticle\hidden particle.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\FlatKit\Shaders\GradientSkybox\GradientSkybox.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\GUI Kit Casual Game\ResourcesData\Shader &amp; Materials\UIAdditive.shader" />
+    <None Include="Assets\FlatKit\Shaders\StylizedSurface\DustyroomStylizedLighting.cginc" />
+    <None Include="Assets\FlatKit\Shaders\StylizedSurface\StylizedSurfaceOutline.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -101,14 +109,19 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Resources\FogPlus.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\GUI Kit Casual Game\ResourcesData\Shader &amp; Materials\MobileAdditive.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\FlatKit\Shaders\StylizedSurface\StylizedSurfaceCutout.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\FlatKit\Shaders\StylizedSurface\StylizedSurface.shader" />
+    <None Include="Assets\FlatKit\Shaders\LightPlane.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\FlatKit\Shaders\StylizedSurface\Terrain.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>

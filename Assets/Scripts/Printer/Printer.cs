@@ -7,7 +7,8 @@ public class Printer : MonoBehaviour
     [SerializeField] private Material _materialTile;
     [SerializeField] private Transform _poolTemplateTile;
     [SerializeField] private Transform _pointSpawn;
-    [SerializeField] private Animator _animator;
+    [SerializeField] private Animator _animatorPrinter;
+    [SerializeField] private Animator _animatorTile;
     [SerializeField] private CollectorTile _collector;
     [SerializeField] private ParticleSystem _particleSystem;
     private float delayBetweenCreate = 0.05f;
@@ -15,6 +16,7 @@ public class Printer : MonoBehaviour
     private bool isActive = true;
 
     private const string Work = "WorkAnim";
+    private const string Jump = "jump";
     private const string Idle = "Idle";
 
     public Material MaterialTile => _materialTile;
@@ -60,7 +62,8 @@ public class Printer : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<Bag>(out Bag bag))
         {
-            _animator.Play(Idle);
+            _animatorPrinter.Play(Idle);
+            _animatorTile.Play(Idle);
             StopCoroutine(CreateTile(bag));
             isWork = false;
         }
@@ -81,7 +84,8 @@ public class Printer : MonoBehaviour
             if (bag.IsMove == false && isCurrentWork == false)
             {
                 isCurrentWork = true;
-                _animator.Play(Work);
+                _animatorPrinter.Play(Work);
+                _animatorTile.Play(Jump);
                 _particleSystem.Play();
             }
 
@@ -89,7 +93,8 @@ public class Printer : MonoBehaviour
             {
                 isCurrentWork = false;
                 _particleSystem.Stop();
-                _animator.Play(Idle);
+                _animatorPrinter.Play(Idle);
+                _animatorTile.Play(Idle);
             }
 
             if (isCurrentWork == true)
@@ -106,7 +111,8 @@ public class Printer : MonoBehaviour
         }
 
         _particleSystem.Stop();
-        _animator.Play(Idle);
+        _animatorPrinter.Play(Idle);
+        _animatorTile.Play(Idle);
         StopCoroutine(CreateTile(bag));
         isWork = false;
     }
