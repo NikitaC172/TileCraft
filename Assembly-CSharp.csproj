@@ -68,12 +68,15 @@
     <Compile Include="Assets\Scripts\Notification\ComliteNotification.cs" />
     <Compile Include="Assets\Scripts\TrashBox\TrashBox.cs" />
     <Compile Include="Assets\GUI Kit Casual Game\Scripts\Panel.cs" />
+    <Compile Include="Assets\FlatKit\Scripts\UvScroller.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
+    <Compile Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Scripts\OutlineImageEffect.cs" />
     <Compile Include="Assets\Scripts\Helper\HelperDirection.cs" />
     <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\Notification\StackNotification.cs" />
     <Compile Include="Assets\GUI Kit Casual Game\Extensions\UIParticle\UIParticleSystem.cs" />
+    <Compile Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Scripts\FogImageEffect.cs" />
     <Compile Include="Assets\Scripts\TilePlane\TileOnPlane.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraPlayer.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
@@ -84,9 +87,6 @@
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\BillBoard.cs" />
     <Compile Include="Assets\Scripts\PrinterState.cs" />
-    <Compile Include="Assets\FlatKit\Scripts\UvScroller.cs" />
-    <Compile Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Scripts\FogImageEffect.cs" />
-    <Compile Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Scripts\OutlineImageEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -11,7 +11,7 @@ public class Bag : MonoBehaviour
     [SerializeField] JoystickPlayerExample _characterBody;
 
     private int _countTile = 0;
-    private float _stepBetweenCell = 0.1f;
+    private float _stepBetweenCell = 0.14f;
     private bool _isFull = false;
     private bool _isEmpty = true;
 

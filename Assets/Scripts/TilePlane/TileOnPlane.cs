@@ -16,6 +16,7 @@ public class TileOnPlane : MonoBehaviour
     [SerializeField] private Highlight _highlight;
     [SerializeField] private MeshRenderer _tileRenderer;
     [SerializeField] private Bag _bag;
+    [SerializeField] private float CoinDropChancePercent = 50.0f;
 
     private BoxCollider _collider;
     private bool _isWhiteBackground = true;
@@ -49,7 +50,11 @@ public class TileOnPlane : MonoBehaviour
         _collider.enabled = false;
         _tileRoot.SetActive(true);
         _animatorTile.Play(AnimateFill);
-        _parentCoin.SetActive(true);
+
+        if (Random.Range(0, 100) > CoinDropChancePercent)
+        {
+            _parentCoin.SetActive(true);
+        }
     }
 
     private void ChangeBackground(Material material)
