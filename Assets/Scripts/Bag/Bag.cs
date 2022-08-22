@@ -46,7 +46,7 @@ public class Bag : MonoBehaviour
     public void ShowMaxSpritel()
     {
         float offsetForSprite = 0.3f;
-        float positionY = _countTile * _stepBetweenCell + offsetForSprite;        
+        float positionY = _countTile * _stepBetweenCell + offsetForSprite;
         _maxSprite.transform.localPosition = new Vector3(0, positionY, 0);
         _maxSprite.SetActive(true);
         StartCoroutine(WaitMovement());
@@ -58,22 +58,15 @@ public class Bag : MonoBehaviour
         {
             _isFull = false;
             gameObject.transform.GetChild(_countTile - 1).TryGetComponent<Tile>(out Tile tile);
-            if (tile != null)
-            {
-                tile.SetMoveToBoard(nextParentObject, pointCollect);
-                _countTile--;
+            tile.SetMoveToBoard(nextParentObject, pointCollect);
+            _countTile--;
 
-                if (_countTile == 0)
-                {
-                    _material = null;
-                    _isEmpty = true;
-                    _isFull = false;
-                    ChangedMaterial.Invoke(_material);
-                }
-            }
-            else
+            if (_countTile == 0)
             {
-                Debug.LogError("Bag: " + "Кол-во: " + _countTile + " !!! Счетчик: " + gameObject.transform.childCount);
+                _material = null;
+                _isEmpty = true;
+                _isFull = false;
+                ChangedMaterial.Invoke(_material);
             }
         }
     }

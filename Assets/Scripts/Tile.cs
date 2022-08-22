@@ -18,7 +18,6 @@ public class Tile : MonoBehaviour
 
     private const string SpinAnimation = "Spin";
     private const string MoveAnimation = "Move";
-    private const string SetOnFieldAnimation = "SetOnField";
     private const string IdleAnimation = "Idle";
 
     public void SetMeshRenderer(Material material)

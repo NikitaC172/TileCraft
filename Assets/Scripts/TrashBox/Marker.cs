@@ -6,11 +6,17 @@ public class Marker : MonoBehaviour
 
     private void OnBecameVisible()
     {
-        _objectRemoveMarker.SetActive(false);
+        if (_objectRemoveMarker != null)
+        {
+            _objectRemoveMarker.SetActive(false);
+        }
     }
 
     private void OnBecameInvisible()
     {
-        _objectRemoveMarker.SetActive(true);
+        if (_objectRemoveMarker != null)
+        {
+            _objectRemoveMarker.SetActive(true);
+        }
     }
 }
